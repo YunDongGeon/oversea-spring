@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- START: Styles -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="../text/css">
+   
+    <link rel="stylesheet" 
+    	href="<%=request.getContextPath() %>/assets/css/combined.css"
+    	th:href="@{/css/combined.css}">
+	<link rel="stylesheet" 
+		href ="<%=request.getContextPath() %>/assets/css/oversea_nav.css"
+		th:href="@{/css/overseaNav.css}">
+	
+	<link href="/assets/css/nav.css" rel="stylesheet" type="text/css"
+		th:href="@{/css/nav.css}">
+<!-- END: Styles -->
+    
+</head>
+<body>
+
+	<header th:fragment="nav" class="nk-header">
+        <!--
+        START: Navbar
+    -->
+        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top">
+            <div class="container">
+                <div class="nk-nav-table">
+                    <a href="index.html" class="nk-nav-logo">
+                        <img src="<%=request.getContextPath() %>/assets/images/logo.png"
+                        	th:src="@{/images/logo.png}" 
+                        	alt="" width="200" class="nk-nav-logo-onscroll">
+                        <img src="<%=request.getContextPath() %>/assets/images/logo.png"
+                        	th:src="@{/images/logo.png}" 
+                        	alt="" width="200">
+                    </a>
+
+                    <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
+                       <li>
+                            <a href="index.jsp#about">
+                            	<img width="25px" height="25px" alt="" 
+                            		src="<%=request.getContextPath() %>/assets/images/search_btn.png"
+                            		th:src="@{/images/searchBtn.png}">
+                           	</a>
+                        </li>
+                        <li>
+                            <a href="<%=request.getContextPath() %>/shop/oversea_desti_list.jsp">여행상품</a>
+                        </li>
+                        <li>
+                            <a href="<%=request.getContextPath() %>/exchange/oversea_exchange_info_ibk.jsp">환율 정보</a>
+                        </li>
+                        <li>
+                            <a href="<%=request.getContextPath() %>/oversea_qna_list.jsp">고객센터</a>
+                        </li>
+                        <li>
+                            <a href="overseaLoginForm.html" th:href="@{overseaLoginForm.do}">로그인</a>
+                        </li>
+                    </ul>
+                    <ul class="nk-nav nk-nav-right nk-nav-icons">
+                        <li class="single-icon hidden-lg-up">
+                            <a href="#" class="nk-navbar-full-toggle">
+                                <span class="nk-icon-burger">
+                                    <span class="nk-t-1"></span>
+                                    <span class="nk-t-2"></span>
+                                    <span class="nk-t-3"></span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- END: Navbar -->
+
+    </header>
+</body>
+</html>

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+.nf_article {
+	width: 300px;
+	display: inline-block;
+	background: white;
+	text-align: left;
+	margin-bottom: 20px;
+}
+.newsfeed_cont{
+	width: 100%;
+	text-align: center;
+}
+.nf_writer{
+	padding-left: 20px;
+}
+.nf_cont{
+	padding-left: 20px;	
+}
+.nf_date{
+	padding-left: 20px;	
+}

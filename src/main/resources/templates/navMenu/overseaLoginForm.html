@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Oversea 로그인하기</title>
+
+<!-- START: Styles -->
+
+<!-- Google Fonts -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'>
+<link rel="stylesheet" href="assets/css/oversea_loginForm.css" th:href="@{/css/overseaLoginForm.css}">
+<link rel="stylesheet" href="assets/css/combined.css">
+<script language="javascript" type="text/javascript" src="assets/js/oversea_login.js" th:src="@{/js/overseaLogin.js}"></script>
+<!-- END: Styles -->
+
+</head>
+<body style="background-image: url('assets/img/14.jpg'); background-size: 100%;">
+	<div th:replace="~{overseaBeforeLoginNav::nav}"></div>
+	<div id="login">
+      <h3><font color="white"><strong>Login</strong></font></h3>
+         <br>
+         <form method="post" action="user/oversea_loginProc.jsp">
+            <fieldset>
+               <p><input type="text" value="Email" name="email"
+                     onBlur="if(this.value=='')this.value='Email'" 
+                        onFocus="if(this.value=='Email')this.value='' " required></p>
+               
+               <p><input type="password" value="Password" name="passwd"
+                     onBlur="if(this.value=='')this.value='Password'"
+                        onFocus="if(this.value=='Password')this.value='' " required></p>
+               <p>
+                  <a href="oversea_choice_idpw.jsp">Forgot Password?</a>
+               </p>             
+               <p><input type="button" value="Login" onclick="loginchk(this.form)"></p>           
+            </fieldset>         
+         </form>
+         <button class="join" onclick="location.href='oversea_joinform.jsp' ">Join us</button>
+	</div>
+</body>
+</html>

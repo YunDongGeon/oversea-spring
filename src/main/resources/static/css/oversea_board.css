@@ -1,0 +1,311 @@
+@CHARSET "UTF-8";
+
+html {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+body {
+	font: 100%/1em 'Nanum Gothic', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	height: 50hv;
+}
+
+.nav {
+	position: absolute;
+	left: 55%;
+	transform: translate(-50%);
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.section {
+	width: 80%;
+	position: absolute;
+	left: 55%;
+	transform: translate(-50%);
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	text-align: center;
+	margin-top: 20vh;
+}
+
+#QA {
+	height: 50vh;
+	background: url("../img/7.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#QA_cover {
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+}
+
+#QA .content {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 4rem;
+	font-weight: bold;
+	color: white;
+	z-index: 1;
+	text-align: center;
+}
+
+.QA_title {
+	font-size: 3.0em;
+	font-weight: bold;
+	text-align: center;
+	width: 15rem;
+	padding-bottom: 3px;
+	/*border-bottom:10px solid #2E2E2E;*/
+}
+
+.board {
+	width: 80%;
+	position: absolute;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: lighter;
+}
+
+.board_form {
+	position: relative;
+	margin-top: 30px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.form {
+	margin: auto;
+	margin-top: 0;
+	text-align: left;
+	border-collapse: collapse;
+	margin-bottom: 1rem;
+	background-color: transparent;
+}
+
+.form a {
+	text-decoration: none;
+	color: black;
+}
+
+.form a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.form a:visited {
+	text-decoration: none;
+	color: green;
+}
+
+.form th, .form td {
+	padding: 0.75rem;
+	vertical-align: top;
+	/*border-top: 1px solid #dee2e6;*/
+}
+
+.form thead th {
+	
+	vertical-align: bottom;
+	border-top: 2px solid rgba(110, 110, 110, 0.5);
+	border-bottom: 1px solid rgba(110, 110, 110, 0.5);
+}
+
+/* 게시판 타이틀 바 */
+th {
+	text-align: center;
+	height: 10px;
+	font-color: #6E6E6E;
+}
+
+thead {
+	width: 100%;
+}
+
+tbody tr:first-child td {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(110, 110, 110, 0.5); /*게시글 밑줄*/
+}
+
+/*
+tbody tr:first-child td {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid rgba(110, 110, 110, 0.5); 
+}
+*/
+
+/* 번호 길이 */
+#no {
+	text-align: center;
+	width: 15rem;
+}
+/* 제목 길이 */
+#title {
+	text-align: center;
+	width: 90rem;
+}
+/* 작성자 길이 */
+#name {
+	width: 30rem;
+}
+/* 작성일 길이 */
+#date {
+	text-align: center;
+	width: 40rem;
+}
+/* 조회수 길이 */
+#count {
+	text-align: center;
+	width: 15rem;
+}
+/* 게시물 위에 마우스 올렸을 시*/
+.form tbody tr:hover {
+	background-color: rgba(0, 0, 0, 0.04);
+	font-weight: bold;
+}
+
+.bottom {
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+
+.page {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.page a {
+	text-decoration: none;
+	color: black;
+}
+
+.page a:hover {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.page a:active {
+	text-decoration: none;
+	color: green;
+}
+
+.page a:link {
+	text-decoration: none;
+	color: blue;
+}
+
+.wrap {
+	position: relative;
+	left: 47%;
+	margin-left: -59px;
+	text-align: center;
+}
+
+.wrap a {
+	-webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+	display: block;
+	margin: 10px auto;
+	max-width: 100px;
+	text-decoration: none;
+	border-radius: 4px;
+	padding: 10px 10px;
+}
+
+.wrap a:hover {
+	text-decoration: none;
+}
+
+.wrap a.button {
+	color: rgba(30, 22, 54, 0.6);
+	box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+.wrap a.button:hover {
+	color: rgba(255, 255, 255, 0.85);
+	box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+}
+
+.left_menulist {
+	margin: 265px 0px 0px 130px;
+	display: inline;
+	float: left;
+}
+
+.board_content {
+	display: inline;
+	float: left;
+}
+
+ul#navi {
+	font-family: 나눔고딕;
+	font-weight: 600;
+	font-size: 20px;
+	text-align: center;
+	width: 200px;
+	text-indent: 10px;
+}
+
+ul#navi, ul#navi ul {
+	margin: 10px 0 10px 0;
+	padding: 10px 0 10px 0;
+	list-style: none;
+}
+
+li.group {
+	margin-bottom: 3px;
+}
+
+li.group div.title {
+	height: 80px;
+	line-height: 50px;
+	color: #000000;
+	cursor: pointer;
+}
+
+ul.sub li {
+	margin-bottom: 2px;
+	height: 35px;
+	line-height: 35px;
+	background: #f4f4f4;
+	cursor: pointer;
+}
+
+ul.sub li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #000;
+}
+
+ul.sub li a:hover {
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #209CCE;
+}

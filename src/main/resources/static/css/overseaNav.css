@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+.oversea_logo {
+	width: 210px;
+	display: none;
+	padding-left: 6px;
+}
+.oversea_nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.oversea_nav_li {
+	display: inline;
+	border-left:1px solid #999;      
+	padding: 0 10px
+}

@@ -1,0 +1,90 @@
+.all_content {
+	display : inline;
+	float : left;
+	margin-top: 17%;
+	margin-bottom: 100px;
+}
+
+#left_menu {
+	display : inline;
+	float : left;
+	margin-left : 100px;
+	margin-right : 150px;
+}
+
+#info_table {
+	width : 900px;
+	display : inline;
+	float : left;
+}
+
+.menulist {
+	list-style-type: none;
+}
+
+li {
+	margin-bottom: 15px;
+}
+
+
+.banks_first a:link,
+.banks_first a:hover,
+.banks_first a:visited{color:#202020}
+
+th {
+	text-align : center;
+}
+
+.off{
+	opacity:0.4;
+}
+
+.menulist li:hover {
+	opacity: 1.0;
+}
+/* .container_sub_banks_saving{clear:both; position:relative; width:996px; margin:0 auto; padding-top: 170px; overflow:visible} */
+/* .container_sub_banks_saving .left_menu{float:left; width:111px; margin-bottom:50px;} */
+/* .container_sub_banks_saving .left_menu .menulist{float:left; margin-bottom:55px} */
+/* .container_sub_banks_saving .left_menu .menulist .first{padding:5px 0 12px!important; color:#202020} */
+/* .container_sub_banks_saving .left_menu .menulist .first a:link, .container_sub .left_menu .menulist .first a:hover, .container_sub .left_menu .menulist .first a:visited{color:#202020} */
+/* .container_sub_banks_saving .left_menu .menulist li{width:95px; text-align:left} */
+
+/* .banks{float:left; padding:1px 0} */
+/* .banks a{display:block; padding-bottom:5px; opacity:0.5; } */
+/* .banks a:hover, .banks_on a{ opacity:1 !important; } */
+/* .banks_select {float:left} */
+
+/* ul.menulist { */
+/* 	margin:0; */
+/* 	padding:0; */
+/* 	list-style-type:none; */
+/* 	display:block; */
+/* 	font:bold 12px tahoma, sans-serif; */
+/* 	line-height:165%; */
+/* 	width:200px; */
+/* } */
+
+/* ul.menulist li { */
+/* 	margin:0; */
+/* 	padding:0; */
+/* } */
+
+/* ul.menulist li a { */
+/* 	display:block; */
+/* 	text-decoration:none; */
+/* 	color:#fff; */
+/* 	background:#600; */
+/* 	padding:5px 0 5px 20px; */
+/* 	width:200px; */
+/* 	height:50px; */
+/* } */
+
+/* ul.menulist li a:hover {	 */
+/* 	background:#900  no-repeat 0 9px; */
+/* } */
+
+/* ul.menulist li a.current,ul.vert-one li a.current:hover { */
+/* background:#933  no-repeat 0 9px; */
+/* } */
+
+

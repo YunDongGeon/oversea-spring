@@ -1,0 +1,63 @@
+@CHARSET "UTF-8";
+
+.scroll-button {
+	background-color: rgba(255, 255, 255, 0.0);
+	display: block;
+	position: absolute;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.5rem;
+	bottom: 65px;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+	height: 60px;
+	opacity: .6;
+	transition: opacity .5s;
+	-webkit-touch-callout: none;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+.scroll-button:hover {
+	opacity: 1;
+	text-decoration: none !important;
+	-webkit-touch-callout: none;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+
+span {
+	height: 40px;
+	width: 40px;
+	display: block;
+	position: relative;
+	margin-left: 135px;
+}
+
+.demoSpan1 {
+	overflow: hidden;
+	height: 25px;
+}
+
+.demoSpan1:before {
+	content: '';
+	height: 20px;
+	width: 20px;
+	display: block;
+	border: 5px solid #fff;
+	border-right-width: 0;
+	border-top-width: 0;
+	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	position: absolute;
+	bottom: 7px;
+	left: 7px;
+}

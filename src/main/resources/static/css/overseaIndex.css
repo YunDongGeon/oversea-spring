@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+.ov_newsfeed{
+	background-color: #fff;
+	height: 280px;
+}
+.ov_newsfeed_banner{
+	text-align: center;
+	margin-top: 150px;	
+}
+.ov_newsfeed_background{
+	background-color: #f1f5f8;
+}

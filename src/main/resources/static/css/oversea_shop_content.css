@@ -1,0 +1,264 @@
+@CHARSET "UTF-8";
+
+html {
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: white;
+}
+
+body {
+	font: 100%/1em 'Nanum Gothic', sans-serif;
+	font-family: 'Nanum Gothic', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.title_h2 {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 25px;
+	line-height: 1.5;
+}
+
+.header {
+	height: 65hv;
+}
+
+.nav {
+	left: 50%;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 25px;
+	background-color: white;
+}
+
+.section {
+	width: 80%;
+	padding: 0px 0px 0px 150px;
+	margin-bottom: 25px;
+	margin-left: 14%;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	text-align: center;
+}
+
+#QA {
+	overflow: hidden;
+	height: 60vh;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#QA_cover {
+	height: 90%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: -1;
+}
+
+#QA .content {
+	position: absolute;
+	top: 35%;
+	left: 60%;
+	transform: translate(-50%, -50%);
+	font-size: 4rem;
+	font-weight: bold;
+	color: white;
+	z-index: -1;
+	text-align: center;
+}
+
+#QA .prodImage {
+	width: 100%;
+	height: auto;
+	margin-top: -300px;
+	display: block;
+}
+
+.contents {
+	float: left;
+	width: 50%;
+	text-align: left;
+}
+
+.buybox {
+	float: left;
+	margin-left: 50px;
+	width: 20%;
+}
+
+.reservation {
+	margin-top: 1%;
+	margin-bottom: 3%;
+	height: 30%;
+	/*border:1px solid;*/
+	background-color: #f1f3f5;
+	padding-top: 10%;
+}
+
+.wish {
+	border: 1px solid #e6e6e6;
+	height: 150px;
+	padding: 10%;
+}
+
+.wish_text {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 0.8rem;
+	letter-spacing: 2px;
+	line-height: 18px;
+}
+
+.check {
+	text-align: left;
+	padding-left: 4%;
+	margin-bottom: 6%;
+}
+
+.check_text {
+	text-align: left;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.3rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+#person {
+	width: 200px;
+	height: 50px;
+	padding-left: 15px;
+	margin-left: 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 2px;
+	vertical-align: middle;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	cursor: pointer
+}
+
+#datepicker {
+	width: 200px;
+	height: 50px;
+	padding-left: 15px;
+	border: 1px solid #c0c0c0;
+	border-radius: 2px;
+	vertical-align: middle;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	cursor: pointer
+}
+
+#check_btn {
+	width: 150px;
+	height: 50px;
+	padding-left: 7px;
+	margin-left: 10px;
+	border: 0px solid #c0c0c0;
+	border-radius: 2px;
+	line-height: 10px;
+	vertical-align: middle;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #209CCE;
+	color: white;
+	cursor: pointer
+}
+
+.reservation_btn {
+	width: 80%;
+	height: 40px;
+	padding-left: 7px;
+	margin-bottom: 7%;
+	border: 0px solid #c0c0c0;
+	border-radius: 2px;
+	line-height: 10px;
+	vertical-align: middle;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #209CCE;
+	color: white;
+	cursor: pointer
+}
+
+.wish_btn {
+	width: 100%;
+	height: 40px;
+	padding-left: 7px;
+	margin-bottom: 7%;
+	border: 1px solid #c0c0c0;
+	border-radius: 3px;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button
+	{
+	-webkit-appearance: none;
+	margin: 0;
+	border-radius: 2px;
+	line-height: 10px;
+	vertical-align: middle;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	background-color: white;
+	color: #c0c0c0;
+	cursor: pointer;
+}
+
+#check_btn:hover, .reservation_btn:hover {
+	background-color: #1a7da4;
+	cursor: pointer;
+}
+
+.wish_btn:hover {
+	background-color: #c0c0c0;
+	color: white;
+	cursor: pointer;
+}
+
+.price {
+	font-weight: bold;
+}
+
+#price {
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.7rem;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: text-bottom;
+	display: inline;
+}
+
+.content_left_input {
+	width: 200px;
+	height: 40px;
+	margin-bottom: 7%;
+	text-align: right;
+	border: 0px;
+	text-align: right;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.3rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.content_right_input {
+	width: 200px;
+	height: 40px;
+	margin-bottom: 7%;
+	margin-left: 15px;
+	border: 0px;
+	text-align: left;
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 1.3rem;
+	font-weight: bold;
+	letter-spacing: 2px;
+}

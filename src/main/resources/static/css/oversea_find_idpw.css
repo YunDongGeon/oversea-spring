@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+
+body {
+	font-color: #ffffff;
+	font: 100%/1.5em 'Open Sans', sans-serif;
+	margin: 0;
+	-webkit-touch-callout: none;
+	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+}
+#find_id {
+	width: 1000px;
+	text-align: center;
+	padding: 60px 50px 60px 50px;
+}
