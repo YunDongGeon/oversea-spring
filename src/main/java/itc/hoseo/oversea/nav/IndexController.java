@@ -1,4 +1,4 @@
-package itc.hoseo.overse.controller;
+package itc.hoseo.oversea.nav;
 
 import javax.servlet.http.HttpSession;
 

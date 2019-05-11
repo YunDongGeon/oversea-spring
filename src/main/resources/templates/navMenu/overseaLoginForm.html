@@ -1,5 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -15,13 +13,13 @@ pageEncoding="UTF-8"%>
 <!-- Google Fonts -->
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'>
 <link rel="stylesheet" href="assets/css/oversea_loginForm.css" th:href="@{/css/overseaLoginForm.css}">
-<link rel="stylesheet" href="assets/css/combined.css">
-<script language="javascript" type="text/javascript" src="assets/js/oversea_login.js" th:src="@{/js/overseaLogin.js}"></script>
+<link rel="stylesheet" href="assets/css/combined.css" th:href="@{/css/combined.css}">
+<script language="javascript" type="text/javascript" src="assets/js/oversea_login.js" th:href="@{/js/overseaLogin.js}"></script>
 <!-- END: Styles -->
 
 </head>
-<body style="background-image: url('assets/img/14.jpg'); background-size: 100%;">
-	<div th:replace="~{overseaBeforeLoginNav::nav}"></div>
+<body th:style="'background:url('+ @{/img/14.jpg} +'); background-size:100%;'">
+	<header class="nk-header" th:insert="overseaBeforeLoginNav::nav"></header>
 	<div id="login">
       <h3><font color="white"><strong>Login</strong></font></h3>
          <br>

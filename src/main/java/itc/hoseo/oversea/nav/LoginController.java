@@ -1,4 +1,4 @@
-package itc.hoseo.overse.controller;
+package itc.hoseo.oversea.nav;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class LoginController {
 	
-	@GetMapping("/overseaLoginForm.do")
+	@GetMapping("overseaLoginForm")
 	public String login() {
-		return "navMenu/overseaLoginForm.html";
+		return "navMenu/overseaLoginForm";
 	}
 	
 }

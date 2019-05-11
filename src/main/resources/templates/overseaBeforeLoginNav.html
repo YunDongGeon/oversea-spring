@@ -30,7 +30,7 @@
         <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top">
             <div class="container">
                 <div class="nk-nav-table">
-                    <a href="index.html" class="nk-nav-logo">
+                    <a href="index.html" th:href="@{/}" class="nk-nav-logo">
                         <img src="<%=request.getContextPath() %>/assets/images/logo.png"
                         	th:src="@{/images/logo.png}" 
                         	alt="" width="200" class="nk-nav-logo-onscroll">
@@ -57,7 +57,7 @@
                             <a href="<%=request.getContextPath() %>/oversea_qna_list.jsp">고객센터</a>
                         </li>
                         <li>
-                            <a href="overseaLoginForm.html" th:href="@{overseaLoginForm.do}">로그인</a>
+                            <a href="overseaLoginForm.html" th:href="@{/overseaLoginForm}">로그인</a>
                         </li>
                     </ul>
                     <ul class="nk-nav nk-nav-right nk-nav-icons">
