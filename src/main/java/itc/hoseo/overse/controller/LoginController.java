@@ -13,7 +13,7 @@ public class LoginController {
 	
 	@GetMapping("/overseaLoginForm.do")
 	public String login() {
-		return "navMenu/overseaLoginForm";
+		return "navMenu/overseaLoginForm.html";
 	}
 	
 }
