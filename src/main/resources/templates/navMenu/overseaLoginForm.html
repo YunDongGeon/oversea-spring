@@ -14,11 +14,11 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300'>
 <link rel="stylesheet" href="assets/css/oversea_loginForm.css" th:href="@{/css/overseaLoginForm.css}">
 <link rel="stylesheet" href="assets/css/combined.css" th:href="@{/css/combined.css}">
-<script language="javascript" type="text/javascript" src="assets/js/oversea_login.js" th:href="@{/js/overseaLogin.js}"></script>
+<script language="javascript" type="text/javascript" src="assets/js/oversea_login.js" th:src="@{/js/overseaLogin.js}"></script>
 <!-- END: Styles -->
 
 </head>
-<body th:style="'background:url('+ @{/img/14.jpg} +'); background-size:100%;'">
+<body th:style="'background:url('+@{/img/14.jpg}+'); background-size:100%;'">
 	<header class="nk-header" th:insert="overseaBeforeLoginNav::nav"></header>
 	<div id="login">
       <h3><font color="white"><strong>Login</strong></font></h3>
@@ -32,13 +32,15 @@
                <p><input type="password" value="Password" name="passwd"
                      onBlur="if(this.value=='')this.value='Password'"
                         onFocus="if(this.value=='Password')this.value='' " required></p>
-               <p>
-                  <a href="oversea_choice_idpw.jsp">Forgot Password?</a>
+               <p id="findbox">
+               	  Forgot 
+                  <a href="oversea_choice_idpw.jsp" th:href="@{/overseaFindId}">ID</a> / 
+                  <a href="oversea_choice_idpw.jsp" th:href="@{/overseaFindPasswd}">PW</a> ?
                </p>             
                <p><input type="button" value="Login" onclick="loginchk(this.form)"></p>           
             </fieldset>         
          </form>
-         <button class="join" onclick="location.href='oversea_joinform.jsp' ">Join us</button>
+         <button class="join" th:onclick="location.href='/overseaJoinForm' ">Join us</button>
 	</div>
 </body>
 </html>

@@ -28,10 +28,6 @@ body {
 	-webkit-user-select: none;
 }
 
-a {
-	text-decoration: none;
-}
-
 h1 {
 	font-size: 1em;
 }
@@ -92,13 +88,19 @@ form fieldset input[type="button"] {
 	-webkit-appearance: none;
 }
 
-a {
-	font-color: #f4f4f4;
+#findbox {
+	color: #f4f4f4;
 	font-size: 1.3rem;
 }
 
-a:hover {
-	font-color: #ffffff;
+#findbox a {
+	text-decoration: none;
+	color: #f4f4f4;
+	font-size: 1.3rem;
+}
+
+#findbox a:hover {
+	color: #ffffff;
 	text-decoration: underline;
 }
 

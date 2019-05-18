@@ -14,8 +14,30 @@ body {
 	-ms-user-select: none;
 	-webkit-user-select: none;
 }
-#find_id {
-	width: 1000px;
+
+#findIdPw {
+	background-color:  rgba(0, 0, 0, 0.4);
+	width: 450px;
 	text-align: center;
-	padding: 60px 50px 60px 50px;
+	position:absolute;
+	padding-top: 60px;
+	padding-bottom:60px;
+	top:30%;
+	left:40%;
+	border-radius: 10px;
+	-moz-box-shadow: 5px 0px 70px black;
+	-webkit-box-shadow: 5px 0px 70px black;
+	box-shadow: 5px 0px 70px black;
+	margin: -50px 0px 0px -50px;	
+}
+
+.back{
+	background: #1bb2e9;
+	border: none;
+	border-radius: 0px 3px 3px 0px;
+	color: #f4f4f4;
+	cursor: pointer;
+	height: 50px;
+	text-transform: uppercase;
+	width: 300px;
 }
