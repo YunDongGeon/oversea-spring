@@ -9,8 +9,5 @@ public class NavController {
 	public String index() {
 		return "index";
 	}
-	@GetMapping("overseaLoginForm")
-	public String login() {
-		return "navMenu/overseaLoginForm";
-	}
+	
 }

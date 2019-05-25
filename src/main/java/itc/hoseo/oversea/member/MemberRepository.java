@@ -17,7 +17,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface MemberRepository {
 	
-	public int addMember(Member member);	
+	public int addMember(Member member);
+	public Member getMember(Member m);
 	public String getMemberName(String email);
 	public List<Member> getAllMember();
 	public int getMemberCount();

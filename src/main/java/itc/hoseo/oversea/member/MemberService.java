@@ -18,6 +18,11 @@ public class MemberService {
 		String memName = memberRepositoty.getMemberName(email);		
 		return memName;
 	};
+	
+	public boolean isValidUser(Member m) {
+		return memberRepositoty.getMember(m) != null;
+	}
+	
 	public List<Member> getAllMember(){
 		return memberRepositoty.getAllMember();
 	}

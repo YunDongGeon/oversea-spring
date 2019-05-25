@@ -7,6 +7,16 @@
 		INSERT INTO member(name, email, passwd, phone, birth, zipcode, addr) 
   	   	VALUES (#{name}, #{email}, #{passwd}, #{phone}, #{birth}, #{zipcode}, #{addr})
     </insert>
+    <select id="getMember" resultType="Member" parameterType="Member">
+		select name from member
+		<where>
+			email = #{email}
+			<if test="passwd != null">
+				and passwd = #{passwd}
+			</if>
+		</where>
+	</select>
+	
 	<select id="getMemberName" resultType="String">
 		select name from member where email = #{email}
 	</select>

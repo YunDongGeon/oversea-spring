@@ -23,7 +23,7 @@
 	<div id="login">
       <h3><font color="white"><strong>Login</strong></font></h3>
          <br>
-         <form method="post" action="user/oversea_loginProc.jsp">
+         <form method="post" action="">
             <fieldset>
                <p><input type="text" value="Email" name="email"
                      onBlur="if(this.value=='')this.value='Email'" 
@@ -37,7 +37,7 @@
                   <a href="oversea_choice_idpw.jsp" th:href="@{/overseaFindId}">ID</a> / 
                   <a href="oversea_choice_idpw.jsp" th:href="@{/overseaFindPasswd}">PW</a> ?
                </p>             
-               <p><input type="button" value="Login" onclick="loginchk(this.form)"></p>           
+               <p><input type="button" value="Login" onclick="this.form.submit();"></p>           
             </fieldset>         
          </form>
          <button class="join" th:onclick="location.href='/overseaJoinForm' ">Join us</button>
