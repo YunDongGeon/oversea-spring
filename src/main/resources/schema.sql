@@ -2,7 +2,7 @@ CREATE TABLE bank (
   account varchar(30) NOT NULL,
   bank varchar(10) NOT NULL,
   name varchar(10) NOT NULL
-)
+);
 
 CREATE TABLE crawling (
   nation varchar(5) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE crawling (
   change varchar(45) DEFAULT NULL,
   change_time varchar(50) DEFAULT NULL,
   PRIMARY KEY (nation)
-)
+);
 
 CREATE TABLE destination (
   destiName varchar(20) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE destination (
   destiMoney float DEFAULT NULL,
   PRIMARY KEY (destiName),
   FOREIGN KEY (destiCountry) REFERENCES crawling (nation)
-)
+);
 
 CREATE TABLE prod (
   prod_id int(11) NOT NULL AUTO_INCREMENT,
@@ -36,7 +36,7 @@ CREATE TABLE prod (
   prod_sales int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (prod_id),
   FOREIGN KEY (prod_desti) REFERENCES destination (destiname)
-)
+);
 
 CREATE TABLE buy (
   buy_id bigint(20) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE buy (
   subs_date varchar(45) DEFAULT NULL,
   sanction varchar(10) DEFAULT '예약완료',
   FOREIGN KEY (prod_id) REFERENCES prod (prod_id)
-)
+);
 
 CREATE TABLE notiboard (
   num int(11) NOT NULL AUTO_INCREMENT,
@@ -65,7 +65,7 @@ CREATE TABLE notiboard (
   readcount int(11) DEFAULT '0',
   content text,
   PRIMARY KEY (num)
-)
+);
 
 
 CREATE TABLE qnaboard (
@@ -83,7 +83,7 @@ CREATE TABLE qnaboard (
   fileName varchar(200) DEFAULT NULL,
   fileRealName varchar(200) DEFAULT NULL,
   PRIMARY KEY (num)
-)
+);
 
 CREATE TABLE member (
   name varchar(10) DEFAULT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE member (
   zipcode varchar(10) DEFAULT NULL,
   addr varchar(200) DEFAULT NULL,
   PRIMARY KEY (email)
-)
+);
 
 CREATE TABLE wishlist (
   wishlist_id int(11) NOT NULL AUTO_INCREMENT,
@@ -108,4 +108,4 @@ CREATE TABLE wishlist (
   prod_price varchar(30) NOT NULL,
   PRIMARY KEY (wishlist_id),
   FOREIGN KEY (prod_id) REFERENCES prod (prod_id)
-)
+);

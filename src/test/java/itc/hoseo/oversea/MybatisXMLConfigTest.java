@@ -66,7 +66,7 @@ public class MybatisXMLConfigTest {
 			mem.setAddr("서울");
 			memberMapper.addMember(mem);
 			assertEquals(1, memberMapper.getMemberCount());
-//			assertEquals("관리자", memberMapper.getMemberName("admin"));
+			assertEquals("관리자", memberMapper.getMemberName("admin"));
 		}
 	}
 }

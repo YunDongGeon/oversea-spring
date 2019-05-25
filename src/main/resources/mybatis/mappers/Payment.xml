@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="itc.hoseo.oversea.mapper.XMLConfigMemberMapper">
+<!-- 
+	INSERT INTO buy
+	(buy_id,
+	buyerEmail,
+	subsName,
+	subsPhone,
+	prod_id,
+	prod_kind,
+	prod_title,
+	buy_price,
+	buy_amount,
+	prod_image,
+	buy_date,
+	payment,
+	sanction)
+	VALUES
+	(#{buy_id},
+	#{buyerEmail},
+	#{subsName},
+	#{subsPhone},
+	#{prod_id},
+	#{prod_kind},
+	#{prod_title},
+	#{buy_price},
+	#{buy_amount},
+	#{prod_imagenothing.jpg},
+	#{buy_date},
+	#{payment},
+	#{sanction예약완료});
+ -->
+</mapper>

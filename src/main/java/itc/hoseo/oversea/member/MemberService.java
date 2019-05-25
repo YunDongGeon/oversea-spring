@@ -4,27 +4,31 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 @Service
 public class MemberService {
+	
 	@Autowired
-	MemberRepository memberRepo;
+	private MemberRepository memberRepositoty;
 	
-	public boolean inserMember(Member member) {
-		return memberRepo.insertMember(member);
+	public boolean addMember(Member member) {
+		return memberRepositoty.addMember(member)==1;
 	}
-	
-	public boolean emailCheck(String email) {
-		return memberRepo.emailCheck(email) > 0 ? true : false;
+	public String getMemberName(String email) {		
+		String memName = memberRepositoty.getMemberName(email);		
+		return memName;
+	};
+	public List<Member> getAllMember(){
+		return memberRepositoty.getAllMember();
 	}
-	
-	public boolean loginCheck(String email, String passwd) {
-		return memberRepo.loginCheck(email, passwd) == 2 ? true : false;
-	}
-	
-	public String findId(Member member) {
-		return memberRepo.findId(member); 
-	}
-	public List<Member> list() {
-		return memberRepo.list();
-	}
+	public int getMemberCount() {
+		return memberRepositoty.getMemberCount();
+	};
+	public boolean updateMember(Member member) {		
+		return memberRepositoty.updateMember(member) == 1;
+	};
+	public boolean delMember(Member member) {
+		return memberRepositoty.delMember(member) == 1;
+	};
+		
 }
