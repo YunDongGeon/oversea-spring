@@ -13,16 +13,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<!-- 
-<%
-	List<DestiDataBean> destiLists = null;
-	DestiDataBean destiList = null;
-	String destiKorName = null;
-
-	DestiDBBean dbpro = DestiDBBean.getInstance();
-	destiLists = dbpro.getDesti();
-%>
- -->
 </head>
 <body>
 	<header class="nk-header" th:replace="overseaNav::nav"></header>
@@ -31,8 +21,8 @@
 
 	<div class="imgbox">
 		<div class="content">
-			<form method="get" action="oversea_shop_search.jsp">
-				<input type="text" name="keyword" placeholder="검색어 입력" class="searchbox">
+			<form method="get" action="">
+				<input type="text" name="destiName" placeholder="검색어 입력" class="searchbox">
 				<input type="submit" class="searchbtn" value="검색">
 			</form>
 		</div>
@@ -45,8 +35,8 @@
 		</div>
 		<div class="fav_travel_con">
 			
-			<div class="fav_travel_item">
-				<a
+			<div th:each="dest : ${destList}" class="fav_travel_item">
+				<a th:text="${dest.destiName}"
 					href="oversea_shop_list.jsp?prod_desti=<%=destiList.getDestiName()%>&prod_kind=all&prod_align=new">
 					<img th:src="@{/img/<%=destiList.getDestiName()%>_desti.png}"
 					class="fav_travel_img" />
