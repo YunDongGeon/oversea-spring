@@ -18,8 +18,8 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MemberRepository {
 	
 	public int addMember(Member member);
-	public Member getMember(Member m);
-	public String getMemberName(String email);
+	public Member checkMember(Member m);
+	public String getMember(String email);
 	public List<Member> getAllMember();
 	public int getMemberCount();
 	public int updateMember(Member member);

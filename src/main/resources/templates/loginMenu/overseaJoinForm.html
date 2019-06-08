@@ -21,9 +21,9 @@
 	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	crossorigin="anonymous"></script>
 
-<script language="javascript" type="text/javascript" src="assets/js/oversea_join.js"></script>
-<link rel="stylesheet" type="text/css" media="all" href="../static/css/combined.css" th:href="@{/css/combined.css}" />
-<link href="assets/css/oversea_join.css" th:href="@{/css/overseaJoin.css}" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" th:src="@{/js/overseaJoin.js}"></script>
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/combined.css}" />
+<link th:href="@{/css/overseaJoin.css}" rel="stylesheet" type="text/css">
 <!--
 <script>
 function checkPost()
@@ -33,14 +33,12 @@ function checkPost()
 </script>
 -->
 </head>
-<body
-	th:style="'background-image: url('+@{/images/bgi.jpg}+'); background-size: 100% 100%'">
+<body th:style="'background-image: url('+@{/images/bgi.jpg}+'); background-size: 100% 100%'">
 	<header class="nk-header" th:insert="overseaBeforeLoginNav::nav"></header>
-	<br><br><br><br>
-	<form method="post">
-		<center>
-		<h1 style="font-family: 'Nanum Gothic', sans-serif; color: white;">회원가입</h1>
-		<br>
+	<center>
+		<form method="post" style="margin-top:240px;">			
+			<h1 style="font-family: 'Nanum Gothic', sans-serif; color: white;">회원가입</h1>
+			<br>
 			<div class="col-3">
 				<input type="text" maxlength="10" name="name" class="form-control" placeholder="이름" />
 			</div>
@@ -61,18 +59,7 @@ function checkPost()
 			</div>
 			<br>
 			<div class="form-row col-3" style="text-align: left; color: #ffffff">
-				<div  style="margin-right:1%; width:32.333%; color: black; ">
-					휴대폰<input type="number" name="ph1" maxlength="3" oninput="maxLengthCheck(this)" 
-						class="form-control">
-				</div>
-				<div style="margin-right:1%; width:33.333%">
-					&nbsp;<input type="number" name="ph2" maxlength="4" oninput="maxLengthCheck(this)" 
-						class="form-control"  />
-				</div>
-				<div  style="margin:0; width:32.333%">
-					&nbsp;<input type="number" name="ph3" maxlength="4" oninput="maxLengthCheck(this)" 
-						class="form-control"  />
-				</div>
+				<input type="number" name="phone" maxlength="11" oninput="maxLengthCheck(this)" class="form-control" placeholder="휴대폰 (예 : 01012345678)">				
 			</div>
 			<br>
 			<div class="col-3">
@@ -101,11 +88,9 @@ function checkPost()
 			<div class="col-3">
 				<input type="button" value="가입하기" onclick="regChk(this.form)" class="btn btn-primary btn-lg btn-block" />
 			</div>
-			<br>
-		</center>
-	</form>
-
-	
+			<br>			
+		</form>
+	</center>
 	<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 	<script>
 		function sample6_execDaumPostcode() {

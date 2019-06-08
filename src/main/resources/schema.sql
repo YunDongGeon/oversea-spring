@@ -15,10 +15,7 @@ CREATE TABLE crawling (
 CREATE TABLE destination (
   destiName varchar(20) NOT NULL,
   destiKorName varchar(20) NOT NULL,
-  destiCountry varchar(3) NOT NULL,
-  destiMoney float DEFAULT NULL,
-  PRIMARY KEY (destiName),
-  FOREIGN KEY (destiCountry) REFERENCES crawling (nation)
+  PRIMARY KEY (destiName)
 );
 
 CREATE TABLE prod (

@@ -10,7 +10,7 @@
 	content="portfolio, clean, minimal, blog, template, portfolio website">
 <meta name="author" content="nK">
 
-<link rel="icon" type="image/png" href="assets/images/favicon.png" >
+<link rel="icon" type="image/png" th:href="@{/images/favicon.png}" >
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,12 +45,11 @@
 
 </head>
 <body>
-	<header class="nk-header" th:replace="overseaBeforeLoginNav::nav"></header>
+	<header class="nk-header" th:replace="overseaNav::nav"></header>
 	<div class="nk-main">
 		<!-- START: Header Title -->
 		<div class="nk-header-title nk-header-title-full">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel"
-				style="padding-top: 156px;">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
 					<!--슬라이드1-->
 					<div class="item active">
@@ -95,16 +94,14 @@
 				</div>
 
 				<!--이전, 다음 버튼-->
-				<a class="left carousel-control" href="#myCarousel"
-					data-slide="prev" style="margin-top: 156px;"> <span
-					class="glyphicon glyphicon-chevron-left"></span>
-				</a> <a class="right carousel-control" href="#myCarousel"
-					data-slide="next" style="margin-top: 156px;"> <span
-					class="glyphicon glyphicon-chevron-right"></span>
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev"> 
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a> <a class="right carousel-control" href="#myCarousel" data-slide="next"> 
+					<span class="glyphicon glyphicon-chevron-right"></span>
 				</a>
 			</div>
-		</div>
- <!-- 
+		</div> 
+        <!-- 	
         <div class="nk-box bg-white id="blog">
             <div class="nk-gap-4 mt-5"></div>
             <h2 class="text-xs-center display-4" style="font-family: 'Nanum Gothic', sans-serif;">추천 상품</h2>
@@ -112,36 +109,34 @@
             <div class="nk-gap mnt-6"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 offset-lg-2">
-                        </div>
-                    </div>
+                    <div class="col-lg-8 offset-lg-2"></div>
                 </div>
             </div>
-            <div class="nk-gap-2 mt-12"></div>
-            <div class="container">
-                
-                <div class="nk-carousel-2 nk-carousel-x2 nk-carousel-no-margin nk-carousel-all-visible nk-blog-isotope" data-dots="true">
-                    <div class="nk-carousel-inner">
+        </div>
+        <div class="nk-gap-2 mt-12"></div>
+        <div class="container">
+            <div class="nk-carousel-2 nk-carousel-x2 nk-carousel-no-margin nk-carousel-all-visible nk-blog-isotope" data-dots="true">
+                <div class="nk-carousel-inner">
+                    <div>
                         <div>
-                            <div>
-                                <div class="pl-15 pr-15">
-                                    <div class="nk-blog-post">
-                                        <div class="nk-post-thumb">
-                                            <a href="shop/oversea_shop_content.jsp?prod_id=<%=prodList.getProd_id() %>&prod_kind=<%=prodList.getProd_kind() %>">
-                                                <img src="prodImage/<%=prodList.getProd_imgName() %>" alt="" class="nk-img-stretch">
-                                            </a>
-                                            <div class="nk-post-category"><a href="#"><%=rank %></a></div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </div>
-               	 	</div>
-                
-            	</div>
-            	<div class="nk-gap-5 mt-20"></div>
+                            <div class="pl-15 pr-15">
+                                <div class="nk-blog-post">
+                                    <div class="nk-post-thumb">
+                                        <a href="shop/oversea_shop_content.jsp?prod_id=<%=prodList.getProd_id() %>&prod_kind=<%=prodList.getProd_kind() %>">
+                                            <img src="prodImage/<%=prodList.getProd_imgName() %>" alt="" class="nk-img-stretch">
+                                        </a>
+                                        <div class="nk-post-category"><a href="#"><%=rank %></a></div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+           	 	</div>
+            
         	</div>
- -->
+        	<div class="nk-gap-5 mt-20"></div>
+    	</div>
+    	 -->
         <!-- END: Blog -->
 		<div id="alliCarousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">

@@ -9,5 +9,16 @@ public class NavController {
 	public String index() {
 		return "index";
 	}
-	
+	@GetMapping("/overseaDestiList")
+	public String destiList() {
+		return "shop/overseaDestiList";
+	}
+	@GetMapping("/overseaSupport")
+	public String support() {
+		return "support/overseaQnaList";
+	}
+	@GetMapping("/overseaExchange")
+	public String exchange() {
+		return "exchange/overseaExchangeInfoIbk";
+	}
 }

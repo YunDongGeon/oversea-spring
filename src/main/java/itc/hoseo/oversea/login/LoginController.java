@@ -23,22 +23,29 @@ public class LoginController {
 	@GetMapping("/overseaFindPasswd")
 	public String findPw() {
 		return "loginMenu/overseaFindPasswd";
-	}
-	
+	}	
 	@GetMapping("overseaLoginForm")
 	public String login() {
 		return "navMenu/overseaLoginForm";
-	}
-	
+	}	
 	@PostMapping("overseaLoginForm")
 	public String loginById(Member m, HttpSession session) {
 		if(service.isValidUser(m)) {
-			session.setAttribute("member", service.getMemberName(m.getEmail()));
+			m = service.getMember(m);
+			session.setAttribute("mem", m);			
 			return "redirect:/";
 		}
 		return "redirect:navMenu/overseaLoginForm";
 	}
-	
+	@GetMapping("overseaUserForm")
+	public String userFrom() {
+		return "userMenu/overseaUserForm";
+	}
+	@GetMapping("overseaLogout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
 	@GetMapping("/overseaJoinForm")
 	public String join() {
 		return "loginMenu/overseaJoinForm";

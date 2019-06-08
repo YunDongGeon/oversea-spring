@@ -4,7 +4,8 @@ function maxLengthCheck(object){
 	}   
 }
 function regChk(form){
-	 var regx =  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
+	 var emailRegx =  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	 var phoneRegx = /^[0-9]*$/;
 	 if(form.name.value==""){
 	  alert("이름을 입력하십시오");
 	  return false;
@@ -14,7 +15,7 @@ function regChk(form){
 	  alert("이메일을 입력하십시오");
 	  return false;
 	 }
-	 if (!regx.test(form.email.value)){
+	 if (!emailRegx.test(form.email.value)){
 	  alert("이메일은 형식으로 입력해주세요.");
 	  form.email.focus();
 	  return false;
@@ -32,18 +33,18 @@ function regChk(form){
 		return false;
 	 }
 	 
-	 if(form.ph1.value==""){
+	 if(form.phone.value==""){
 		 alert("핸드폰번호를 입력하십시오");
 		 return false;
+		 
+	 }
+	 if(!phoneRegx.test(form.phone.value)){
+		 alert("형식에 맞게 입력하십시오");
+		 return false;		 
 	 }
 	 
-	 if(form.ph2.value==""){
-		 alert("핸드폰번호를 입력하십시오");
-		 return false;
-	 }
-	 
-	 if(form.ph3.value==""){
-		 alert("핸드폰번호를 입력하십시오");
+	 if(form.birth.value==""){
+		 alert("생년월일을 입력하십시오.")
 		 return false;
 	 }
 	 
@@ -56,7 +57,7 @@ function regChk(form){
 		 return false;
 	 }
 	 
-	form.action = "user/oversea_joinProc.jsp";
+	form.action = "overseaJoin";
 	form.submit();
 }
 

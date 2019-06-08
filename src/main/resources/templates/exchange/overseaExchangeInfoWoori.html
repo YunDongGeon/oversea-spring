@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Oversea 환율 정보</title>
+
+<!-- START: Styles -->
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">    
+<link rel="stylesheet" th:href="@{/css/overseaExchangeInfo.css}">
+<link th:href="@{/css/combined.css}" rel="stylesheet" type="text/css">
+
+<!-- END: Styles -->
+
+</head>
+<body>
+	<header class="nk-header" th:replace="overseaNav::nav"></header>
+
+	<div class="all_content">
+		<div id="left_menu">
+			<ul class="menulist">
+				<li class="off">
+					<div class="banks_first">
+						<a th:href="@{/overseaExchangeInfoIbk}"><img th:src="@{/images/ibkbank.png}" alt="IBK기업은행"></a>
+					</div>
+				</li>
+				<li class="on">
+					<div>
+						<a th:href="@{/overseaExchangeInfoWoori}"><img th:src="@{/images/wooribank.png}" alt="우리은행"></a>
+					</div>
+				</li>
+				<li class="off">
+					<div>
+						<a th:href="@{/overseaExchangeInfoKb}"><img th:src="@{/images/kbbank.png}" alt="KB국민은행"></a>
+					</div>
+				</li>
+				<li class="off">
+					<div>
+						<a th:href="@{/overseaExchangeInfoSh}"><img th:src="@{/images/shbank.png}" alt="신한은행"></a>
+					</div>
+				</li>
+				<li class="off">
+					<div>
+						<a th:href="@{/overseaExchangeInfoNh}"><img th:src="@{/images/nhbank.png}" alt="NH농협은행"></a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div id="info_table">
+		    <table class="table table-striped">
+		    	<thead>
+		    		<tr>
+		    			<th class="first" colspan="2">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp외화</th>
+		    			<th>현찰 살 때</th>
+		    			<th>수수료율</th>
+		    			<th>현찰 팔 때</th>
+		    			<th>수수료율</th>
+		    			<th>매매기준율</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    		<tr>
+		    			<td><img th:src="@{/images/CNY.png}" alt="중국"></td>
+		    			<td>중국</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/JPY.png}" alt="일본"></td>
+		    			<td>일본</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/USD.png}" alt="미국"></td>
+		    			<td>미국</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/EUR.png}" alt="유럽연합"></td>
+		    			<td>유럽연합</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/HKD.png}" alt="홍콩"></td>
+		    			<td>홍콩</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/TWD.png}" alt="대만"></td>
+		    			<td>대만</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/SGD.png}" alt="싱가폴"></td>
+		    			<td>싱가폴</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/THB.png}" alt="태국"></td>
+		    			<td>태국</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/PHP.png}" alt="필리핀"></td>
+		    			<td>필리핀</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    		<tr>
+		    			<td><img th:src="@{/images/VND.png}" alt="베트남"></td>
+		    			<td>베트남</td>
+		    			<td>321.32</td>
+		    			<td>4.64%</td>
+		    			<td>123.53</td>
+		    			<td>4.23%</td>
+		    			<td>4930.29</td>
+		    		</tr>
+		    	</tbody>
+		    </table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title th:text="|${session.mem.name}님의 페이지|"></title>
+
+<!-- START: Styles -->
+	<link rel="icon" type="image/png" th:href="@{/images/favicon.png}" >
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" th:href="@{/css/overseaUserForm.css}" >
+	<link rel="stylesheet" 
+    	href="../static/css/combined.css" th:href="@{/css/combined.css}">
+<!-- END: Styles -->
+
+</head>
+<body>
+	<header class="nk-header" th:replace="overseaNav::nav"></header>
+	<section class="section">		
+		<div class="write"> 	
+			<a th:if="${session.mem.email}=='admin'" href="manager/oversea_manager_main.jsp?prod_kind=all">
+				<button class="write_btn">상품 관리하기</button>
+			</a>
+		    <a href="shop/oversea_wishlist.jsp">
+		    	<button class="write_btn">위시리스트</button>
+		    </a>
+		    <a href="shop/oversea_buyList.jsp">
+		    	<button class="write_btn">구매목록</button>
+		    </a>
+		    <a href="user/oversea_check_user.jsp">
+		    	<button class="write_btn">회원정보수정</button>
+		    </a><br>
+		    <a th:href="@{/overseaLogout}">
+		    	<button class="logout_btn">로그아웃</button>
+		    </a>
+	    </div>
+    </section>
+</body>
+</html>
