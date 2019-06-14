@@ -49,7 +49,7 @@ function searchCheck(form){
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Oversea 고객센터</title>
 
-<link th:href="@{/css/oversea_board.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/overseaBoard.css}" rel="stylesheet" type="text/css">
 <link th:href="@{/css/combined.css}" rel="stylesheet" type="text/css">
 
 <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&amp;subset=korean"	rel="stylesheet">
@@ -159,48 +159,32 @@ function searchCheck(form){
 				<div class="bottom">
 					<div class="wrap">
 						<a th:if="${session.mem!=null}" href="oversea_qna_WriteForm.jsp" class="button">글쓰기</a>
+					</div>					
+					<div th:if="${#request.getParameter('keyField')}==null" class="page" th:each="qnaCount : ${qnaCount}">
+						<ul id="pageNum">
+							<li><a href="#">[이전]</a></li>
+							<li th:each="no : ${#numbers.sequence(0, qnaCount/5, 1)}">
+								<a th:if="${qnaCount%5 != 0}" th:href="@{/overseaSupport?pageNum={no}(no=${no+1})}" >  [ [[${no+1}]] ]  </a>
+							</li>
+							<li><a href="#">[다음]</a></li>
+						</ul>					
 					</div>
-				<!-- 
-					<div class="page">
-						<%
-							if (count > 0) {
-								int pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
-								int startPage = 1;
-
-								if (currentPage % 5 != 0)
-									startPage = (int) (currentPage / 5) * 5 + 1;
-								else
-									startPage = ((int) (currentPage / 5) - 1) * 5 + 1;
-
-								int pageBlock = 5;
-								int endPage = startPage + pageBlock - 1;
-								if (endPage > pageCount)
-									endPage = pageCount;
-
-								if (startPage > 5) {
-						%>
-						<a href="oversea_qna_list.jsp?pageNum=<%=startPage - 5%>">[이전]</a>
-						<%
-							}
-
-								for (int i = startPage; i <= endPage; i++) {
-						%>
-						<a href="oversea_qna_list.jsp?pageNum=<%=i%>">[<%=i%>]
-						</a>
-						<%
-							}
-
-								if (endPage < pageCount) {
-						%>
-						<a href="oversea_qna_list.jsp?pageNum=<%=startPage + 5%>">[다음]</a>
-						<%
-							}
-							}
-						%>
+					<div class="page" th:unless="${#request.getParameter('keyField')}==null" th:each="qnaCount : ${qnaCount}" >
+						<ul id="pageNum">
+							<li><a href="#">[이전]</a></li>
+							<li th:each="no : ${#numbers.sequence(0, qnaCount/5, 1)}">
+								<a th:if="${qnaCount%5 != 0}" 
+								   	th:href="@{/overseaSupport?pageNum={no}&keyField={keyField}&keyWord={keyWord}(no=${no+1},
+								   			 keyField=${#request.getParameter('keyField')}, keyWord=${#request.getParameter('keyWord')})}" >  
+									[ [[${no+1}]] ]  
+								</a>
+							</li>
+							<li><a href="#">[다음]</a></li>
+						</ul>					
 					</div>
-					 -->
 				</div>				
 				<form action="overseaSupport" name="serach" method ="get">
+					<input type="hidden" name="pageNum" value="1"/>
             		<select name="keyField" id="keyField">
                 		<option value="subject">제목</option>
                 		<option value="writer">글쓴이</option>

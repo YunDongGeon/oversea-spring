@@ -10,8 +10,11 @@ public class SupportService {
 	@Autowired
 	SupportRepository supportRepositoty;
 	
-	public List<Support> getQnaArticles(Support support) {		
+	public List<Support> getQnaArticles(Support support) {
 		return supportRepositoty.getQnaArticles(support);
 	}
-	
+	public int getQnaArticleCount(Support support) {
+		int count = supportRepositoty.getQnaArticleCount(support);
+		return count;
+	}
 }

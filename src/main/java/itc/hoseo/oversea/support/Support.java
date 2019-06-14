@@ -21,6 +21,7 @@ public class Support {
     private String fileRealName;
     private int start;
     private int end;
+    private int pageNum;
     private String keyField;
     private String keyWord;
     

@@ -309,3 +309,10 @@ ul.sub li a:hover {
 	text-decoration: none;
 	color: #209CCE;
 }
+ul#pageNum {
+    list-style:none;
+}
+
+ul#pageNum li {
+    display: inline;
+}
