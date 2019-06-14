@@ -11,6 +11,5 @@ import lombok.NoArgsConstructor;
 public class Destination {
 	private String destiName;
 	private String destiKorName;
-	private float destiMoney;
 	
 }

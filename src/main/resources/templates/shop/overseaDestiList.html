@@ -36,13 +36,8 @@
 		<div class="fav_travel_con">
 			
 			<div th:each="dest : ${destList}" class="fav_travel_item">
-				<a th:text="${dest.destiName}"
-					href="oversea_shop_list.jsp?prod_desti=<%=destiList.getDestiName()%>&prod_kind=all&prod_align=new">
-					<img th:src="@{/img/<%=destiList.getDestiName()%>_desti.png}"
-					class="fav_travel_img" />
-					<div class="desti_content">
-						
-					</div>
+				<a href="#">
+					<img th:src="@{/img/{id}_desti.png(id=${dest.destiName})}" class="fav_travel_img" />
 				</a>
 			</div>
 		</div>

@@ -9,6 +9,9 @@ public class Notice {
     private String email;
     private String content;
     private Timestamp regDate;
+    
+    
+    
     public Timestamp getRegDate() {
 		return regDate;
 	}

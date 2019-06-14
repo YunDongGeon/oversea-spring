@@ -102,7 +102,7 @@ function searchCheck(form){
 				<%
 					if (count == 0) {
 				%>
-			 -->
+			
 				<table class="form">
 					<thead>
 						<tr>
@@ -140,53 +140,18 @@ function searchCheck(form){
 							<th class="th" id="date">작성시간</th>
 							<th class="th" id="count">조회수</th>
 						</tr>
-					</thead>
-					<!-- 
-					<%
-						for (int i = 0; i < articleList.size(); i++) {
-								BoardDataBean article = articleList.get(i);
-					%>
-					 -->
-					<tbody>
+					</thead>					
+					<tbody th:each="qna : ${qnaList}">
 						<tr>
-							<td id="no"><!-- <%=number--%> --></td>
+							<td id="no" th:text="${qna.num}"></td>
 							<td>
-							<!-- 
-							<%
-								int wid = 0;
-								if (article.getRe_level() > 0) {
-									wid = 5 * (article.getRe_level());
-							%> 
-
-							<img th:src="@{/images/level.png}" width="<%=wid%>" height="16"> 
-							<img src="assets/images/re.png">
-							<% } else {  %> 
-							<img src="assets/images/level.png" width="<%=wid%>" height="16">
-							<% } %>
-							 -->
-							<a href="oversea_qna_content.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>">
-									<%=article.getSubject()%>
-							</a> 
-							<!-- 
-							<% 
-								if (article.getReadcount() >= 20) {
- 							%> 
- 							 -->
- 							<img src="assets/images/hot.png" border="0" height="16">
- 							<!--  
- 							<% } %>
- 							 -->
+								<a href="#" th:text="${qna.subject}"></a> 							
 							</td>
-							<td><a href="mailto:<%=article.getEmail()%>"> <!-- <%=article.getWriter()%> --></a></td>
-							<td id="date"><!-- <%=sdf.format(article.getReg_date())%> --></td>
-							<td id="count"><!-- <%=article.getReadcount()%> --></td>
+							<td th:text="${qna.writer}"></td>							 
+							<td id="date" th:text="${qna.regDate}"></td>
+							<td id="count" th:text="${qna.readCount}"></td>						
 						</tr>
 					</tbody>
-					<!-- 
-					<%
-						}
-					%>
-					 -->
 				</table>
 				</td>
 				</tr>
@@ -196,10 +161,6 @@ function searchCheck(form){
 						<a th:if="${session.mem!=null}" href="oversea_qna_WriteForm.jsp" class="button">글쓰기</a>
 					</div>
 				<!-- 
-					<%
-						}
-					%>
-
 					<div class="page">
 						<%
 							if (count > 0) {
@@ -238,17 +199,15 @@ function searchCheck(form){
 						%>
 					</div>
 					 -->
-				</div>
-				
-				<form name="serach" method ="get">
+				</div>				
+				<form action="overseaSupport" name="serach" method ="get">
             		<select name="keyField" id="keyField">
                 		<option value="subject">제목</option>
                 		<option value="writer">글쓴이</option>
             		</select>
 	            	<input type="text" name="keyWord" id="keyWord" />
 	            	<input type="submit" value="검색" />
-            	</form>
-				
+            	</form>				
 			</div>
 		</div>
 		</section>

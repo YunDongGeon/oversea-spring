@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="itc.hoseo.oversea.destination.DestinationRepository">	
+    <select id="getDesti" resultType="Destination">
+		select * from destination order by destiKorName		
+	</select>	
+	<select id="getKorName" resultType="String">
+		select destiKorName from destination where destiName = #{destiName}		
+	</select> 
+</mapper>

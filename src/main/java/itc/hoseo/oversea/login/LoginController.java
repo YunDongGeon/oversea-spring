@@ -26,7 +26,7 @@ public class LoginController {
 	}	
 	@GetMapping("overseaLoginForm")
 	public String login() {
-		return "navMenu/overseaLoginForm";
+		return "loginMenu/overseaLoginForm";
 	}	
 	@PostMapping("overseaLoginForm")
 	public String loginById(Member m, HttpSession session) {
