@@ -17,4 +17,6 @@ public class SupportService {
 		int count = supportRepositoty.getQnaArticleCount(support);
 		return count;
 	}
-}
+	public Support getQnaArticleContent(Support support) {
+		return supportRepositoty.getQnaArticleContent(support);
+	}}

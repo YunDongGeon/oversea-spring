@@ -15,7 +15,7 @@ public interface SupportRepository {
 	public boolean insertQnaArticle(Support support);
 	public int getQnaArticleCount(Support support);
 	public List<Support> getQnaArticles(Support support);
-	public Support getQnaArticle(Support support);
+	public Support getQnaArticleContent(Support support);
 	public Support updateGetQnaArticle(Support support);
 	public boolean updateQnaArticle(Support support);
 }

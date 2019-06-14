@@ -30,4 +30,10 @@
 			</if>			
       	</where>
 	</select>
+	<select id="getQnaArticleContent" resultType="Support" parameterType="Support">
+		select * from qnaboard
+		<where>			
+			num = #{num}		
+      	</where>
+	</select>
 </mapper>

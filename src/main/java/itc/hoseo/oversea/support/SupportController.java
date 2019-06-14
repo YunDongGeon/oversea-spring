@@ -22,4 +22,9 @@ public class SupportController {
 		m.put("qnaCount", service.getQnaArticleCount(support));
 		return "support/overseaQnaList";
 	}
+	@GetMapping("/overseaQnaCont")
+	public String qnaCont(ModelMap m, Support support) {
+		m.put("qnaCont", service.getQnaArticleContent(support));
+		return "support/overseaQnaCont";
+	}
 }

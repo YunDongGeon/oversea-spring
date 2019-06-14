@@ -1,0 +1,105 @@
+<html style="background-color: #ffffff;">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<title>게시판</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript" th:src="@{/js/oversea_board_delete.js}"></script>
+<link th:href="@{/css/overseaBoard.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/combined.css}" rel="stylesheet" type="text/css">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Nanum+Gothic&amp;subset=korean"
+	rel="stylesheet">
+
+</head>
+<body style="background-color: #ffffff;">
+	<header class="nk-header" th:replace="overseaNav::nav"></header>
+	<header class="header">
+		<div id="QA">
+			<div class="content">고 객 센 터</div>
+			<div id="QA_cover"></div>
+		</div>
+	</header>
+	<div class="left_menulist">
+		<ul id="navi">
+			<li class="group">
+				<div class="title"
+					style="font-size: 30px; background-color: #ffffff;">고객센터</div>
+				<ul class="sub">
+					<li><a href="oversea_notice_list.jsp"
+						style="background-color: #ffffff;">공지사항</a></li>
+					<hr>
+					<li><a th:href="@{overseaSupport?pageNum=1}"
+						style="background-color: #ffffff; color: #209CCE">Q & A</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="board_content">
+		<!-- nav -->
+		<section class="section">
+				<form name="contForm">
+					<table class="form">
+						<tr height="30">
+							<td align="center" width="200">글제목</td>
+							<td align="left" width="200" th:text="${qnaCont.subject}"></td>
+							<td align="center" width="200">조회수</td>
+							<td align="left" width="200" th:text="${qnaCont.readCount}"></td>
+						</tr>
+						<tr height="30">
+							<td align="center" width="200">작성자</td>
+							<td align="center" width="200" th:text="${qnaCont.writer}"></td>
+							<td align="center" width="200">작성일</td>
+							<td align="center" width="200" th:text="${qnaCont.regDate}"></td>
+						</tr>
+						<tr>
+							<td align="center" width="30" height="300"></td>
+							<td align="left" width="375" colspan="3"><pre th:text="${qnaCont.content}"></pre></td>
+						</tr>
+						<!-- 
+						<% if (article.getFileRealName()==null){ %>
+
+						<% } else { %>
+						<tr>
+							<td align="center" width="200">첨부파일</td>
+							<td align="left" width="375" colspan="3">
+							<a id="downLink" href="#"> <%=article.getFileRealName()%></a> 
+							<script type="text/javascript">
+	       							document.getElementById("downLink").addEventListener("click", function(event) {
+	     							event.preventDefault(); // a 태그의 기본 동작을 막음
+	                				event.stopPropagation(); // 이벤트의 전파를 막음
+	                				// 중복 처리된 파일 이름을 utf-8로 인코딩한다.
+	                				var fName = encodeURIComponent('<%=article.getFileName()%>');
+										// 인코딩된 파일이름을 쿼리문자열에 포함시켜 다운로드 페이지로 이동
+										window.location.href = "board/oversea_qna_DownPro.jsp?file_name=" + fName;
+									});
+							</script>
+							</td>
+						</tr>
+						<%} %>
+						 -->
+						<tr height="30">
+							<td colspan="4" align="center">
+								<input type="hidden" name="num" value="<%=article.getNum()%>"> 
+								<input type="hidden" name="pageNum" value="<%=pageNum%>"> 
+								<!-- 작성자 이거나 관리자면 버튼 보이기 --> 
+								<input class="btn btn-success" type="button" value="글수정" 
+									onclick="document.location.href='oversea_qna_UpdateForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
+									&nbsp;&nbsp;&nbsp;&nbsp; 
+								<input class="btn btn-success"	type="button" value="글삭제"
+									onclick="del_ok('board/oversea_qna_DeletePro.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>')">
+									&nbsp;&nbsp;&nbsp;&nbsp; 						
+								<input class="btn btn-success" type="button" value="답글쓰기"
+									onclick="document.location.href='oversea_qna_WriteForm.jsp?num=<%=num%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
+									&nbsp;&nbsp;&nbsp;&nbsp;
+								<a th:href="@{overseaSupport?pageNum=1}">
+									<input class="btn btn-info" type="button" value="글목록"/>
+								</a>								
+							</td>
+						</tr>
+					</table>
+				</form>
+		</section>
+	</div>
+</body>
+</html>
