@@ -1,16 +1,3 @@
-<script>
-function searchCheck(form){
-    //검색
-   
-    if(form.keyWord.value ==""){
-        alert("검색 단어를 입력하세요.");
-        form.keyWord.focus();
-        return;
-    }
-    form.submit();      
-}
-</script>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html style="background-color:#ffffff;">
 <head>
@@ -66,12 +53,7 @@ function searchCheck(form){
 		<section class="section">
 		<div class="board">
 			<div class="board_form">
-			<!-- 
-				<%
-					if (count == 0) {
-				%>
-			
-				<table class="form">
+				<table th:if="${qnaCount} == 0" class="form">
 					<thead>
 						<tr>
 							<th class="th" id="no">No</th>
@@ -81,25 +63,19 @@ function searchCheck(form){
 							<th class="th" id="count">조회수</th>
 						</tr>
 					</thead>
+					<tbody>
+						<tr>
+							<td colspan="5" align="center">작성된 게시글이 없습니다.</td>
+						</tr>
+					</tbody>
 				</table>
 				</td>
 				</tr>
 				</table>
-				<div class="wrap">
-				<!-- 
-					<% if (session.getAttribute("loginEmail")==null) { %>
-					
-					<% } else { %>
-						<a href="oversea_qna_WriteForm.jsp" class="button">글쓰기</a>
-					<% } %>
-				 -->
+				<div class="wrap" th:if="${session.mem!=null} and ${qnaCount}==0">
+					<a th:href="@{overseaQnaWrite}" class="button">글쓰기</a>
 				</div>
-				<!-- 
-				<%
-					} else {
-				%>
-				 -->
-				<table class="form">
+				<table th:unless="${qnaCount} == 0" class="form">
 					<thead>
 						<tr>
 							<th class="th" id="no">No</th>
@@ -112,11 +88,15 @@ function searchCheck(form){
 					<tbody th:each="qna : ${qnaList}">
 						<tr>
 							<td id="no" th:text="${qna.num}"></td>
-							<td>								
+							<td>	
+								<img th:if="${qna.reLevel>0}" th:src="@{/images/level.png}" th:width="${5*qna.reLevel}" height="16"> 
+								<img th:if="${qna.reLevel>0}" th:src="@{/images/re.png}">
+								<img th:unless="${qna.reLevel>0}" th:src="@{/images/level.png}" width="0" height="16">							
 								<a th:if="${#request.getParameter('keyField')}==null" th:href="@{/overseaQnaCont?num={num}(num=${qna.num})}" th:text="${qna.subject}"></a>								 							
 								<a th:unless="${#request.getParameter('keyField')}==null" 
 									th:href="@{/overseaQnaCont?num={num}&keyField={keyField}&keyWord={keyWord}(num=${qna.num},
 				   							 keyField=${#request.getParameter('keyField')}, keyWord=${#request.getParameter('keyWord')})}" th:text="${qna.subject}"></a>
+								<img th:if="${qna.readCount>=20}" th:src="@{/images/hot.png}" border="0" height="16">
 							</td>
 							<td th:text="${qna.writer}"></td>							 
 							<td id="date" th:text="${qna.regDate}"></td>
@@ -127,10 +107,10 @@ function searchCheck(form){
 				</td>
 				</tr>
 				</table>
-				<div class="bottom">
-					<div class="wrap">
-						<a th:if="${session.mem!=null}" href="oversea_qna_WriteForm.jsp" class="button">글쓰기</a>
-					</div>					
+				<div class="wrap" th:if="${session.mem!=null} and ${qnaCount}!=0">
+					<a th:href="@{overseaQnaWrite}" class="button">글쓰기</a>
+				</div>
+				<div th:if="${qnaCount}!=0" class="bottom">									
 					<div th:if="${#request.getParameter('keyField')}==null" class="page" th:each="qnaCount : ${qnaCount}">
 						<ul id="pageNum">
 							<li><a href="#">[이전]</a></li>
@@ -161,7 +141,7 @@ function searchCheck(form){
                 		<option value="writer">글쓴이</option>
             		</select>
 	            	<input type="text" name="keyWord" id="keyWord" />
-	            	<input type="submit" value="검색" />
+	            	<button type="submit" onclick="searchCheck(this.form)">검색</button>
             	</form>				
 			</div>
 		</div>
@@ -169,3 +149,15 @@ function searchCheck(form){
 	</div>
 </body>
 </html>
+<script>
+	function searchCheck(form){
+	    //검색
+	   
+	    if(form.keyWord.value ==""){
+	        alert("검색 단어를 입력하세요.");
+	        form.keyWord.focus();
+	        return;
+	    }
+	    form.submit();      
+	}
+</script>

@@ -36,4 +36,20 @@
 			num = #{num}		
       	</where>
 	</select>
+	<update id="incQnaReadCount" parameterType="Support">
+		update qnaboard set readCount=readCount+1 where num = #{num}
+	</update>
+	<select id="getMaxNum" parameterType="Support" resultType="int">
+		select max(num) from qnaboard
+	</select>
+	<update id="incQnaRe" parameterType="Support">
+		update qnaboard set reStep=#{reStep} where ref= #{ref} and reStep > #{reStep}";
+	</update>
+	<insert id="insertQnaArticle" parameterType="Support">
+		<if test="num==0">
+				
+		</if>
+		insert into qnaboard(writer, email, subject, regDate, ref, reStep, reLevel, content)
+		values (#{writer}, #{email}, #{subject}, #{regDate}, #{ref}, #{reStep}, #{reLevel}, #{content}) 
+	</insert>
 </mapper>

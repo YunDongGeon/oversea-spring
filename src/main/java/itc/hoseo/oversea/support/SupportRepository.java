@@ -16,6 +16,9 @@ public interface SupportRepository {
 	public int getQnaArticleCount(Support support);
 	public List<Support> getQnaArticles(Support support);
 	public Support getQnaArticleContent(Support support);
+	public boolean incQnaReadCount(Support support);
 	public Support updateGetQnaArticle(Support support);
 	public boolean updateQnaArticle(Support support);
+	public int getMaxNum(Support support);
+	public boolean incQnaRe(Support support);
 }

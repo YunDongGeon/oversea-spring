@@ -19,4 +19,18 @@ public class SupportService {
 	}
 	public Support getQnaArticleContent(Support support) {
 		return supportRepositoty.getQnaArticleContent(support);
-	}}
+	}
+	public boolean incQnaReadCount(Support support) {
+		return supportRepositoty.incQnaReadCount(support);
+	}
+	public int getMaxNum(Support support) {
+		return supportRepositoty.getMaxNum(support);
+	}
+	public boolean insertQnaArticle(Support support) {
+		return supportRepositoty.insertQnaArticle(support);
+	}
+	public boolean incQnaRe(Support support) {
+		return supportRepositoty.incQnaRe(support);
+	}
+}
+

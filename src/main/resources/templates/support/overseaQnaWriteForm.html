@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html style="background-color: #ffffff;">
+<head>
+<meta charset="UTF-8">
+<title>Oversea 고객센터 글쓰기</title>
+
+<script type="text/javascript" src="script.js"></script>
+<link th:href="@{/css/overseaBoard.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/combined.css}" rel="stylesheet" type="text/css">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Nanum+Gothic&amp;subset=korean"
+	rel="stylesheet">
+</head>
+
+<body style="background-color: #ffffff;">
+	<header class="nk-header" th:replace="overseaNav::nav"></header>
+	<!-- header -->
+	<header class="header">
+		<div id="QA">
+			<div class="content">고 객 센 터</div>
+			<div id="QA_cover"></div>
+		</div>
+	</header>
+	<div class="left_menulist">
+		<ul id="navi">
+			<li class="group">
+				<div class="title"
+					style="font-size: 30px; background-color: #ffffff;">고객센터</div>
+				<ul class="sub">
+					<li><a href="oversea_notice_list.jsp"
+						style="background-color: #ffffff;">공지사항</a></li>
+					<hr>
+					<li><a th:href="@{overseaSupport?pageNum=1}"
+						style="background-color: #ffffff; color: #209CCE">Q & A</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<div class="board_content">
+		<!-- nav -->
+		<nav class="nav">
+			<div class="QA_title">Q & A 글쓰기</div>
+			<br> <br>
+		</nav>
+		<section class="section">
+			<center>
+				<form method="post" name="writeform" class="qnaWriteForm" onsubmit="return writeSave()" 
+					action="addQna">
+					<!-- 
+					<input type="hidden" name="num" th:value="${}"> 
+					<input type="hidden" name="ref" value="<%=ref%>"> 
+					<input type="hidden" name="re_step" value="<%=re_step%>">
+					<input type="hidden" name="re_level" value="<%=re_level%>">
+					 -->
+					<input type="hidden" name="writer" th:value="${session.mem.name}"/>
+					<input type="hidden" name="email" th:value="${session.mem.email}"/>
+					<table>
+						<tr>
+							<td width="70" align="center">제 목</td>
+							<td width="330" align="left">
+								<input id="subject" type="text" size="80" maxlength="50" name="subject" value="" style="ime-mode: active;">
+							</td>
+						</tr>
+						<tr>
+							<td width="70" align="center">내 용</td>
+							<td width="330" align="left">
+								<textarea id="cont" name="content" rows="25" cols="80" style="ime-mode: active;"></textarea></td>
+						</tr>
+						<!-- 						
+						<tr>
+							<td width="70" align="center">파 일</td>
+							<td width="330" align="left">
+								<input id="file" type="file" name="fileName">
+							</td>
+						</tr>
+						 -->
+						<tr>
+							<td colspan=2 align="center">
+								<input class="btn btn-success" type="submit" value="글쓰기"/> 
+								<input class="btn btn-success" type="reset" value="다시작성">
+								<a th:href="@{overseaQnaList?pageNum=1}" 
+									<button class="btn btn-info">목록보기</button>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</center>
+		</section>
+	</div>
+</body>
+</html>
+<script>
+	function writeSave(){
+	    if(subject.value ==""){
+	        alert("제목을 입력하세요.");
+	        subject.focus();
+	        return false;
+	    }
+	    if(content.value ==""){
+	        alert("내용을 입력하세요.");
+	        content.focus();
+	        return false;
+	    }
+	    return true;      
+	}
+</script>
